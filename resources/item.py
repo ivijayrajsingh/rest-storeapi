@@ -16,7 +16,7 @@ class Item(Resource):
         item = ItemModel.find_by_name(name)
         if item:
             return item.json(), 200
-        return {'item': None}, 404
+        return {'message':'item with {} doesnot exists'.format(name)}, 404
 
 
 
